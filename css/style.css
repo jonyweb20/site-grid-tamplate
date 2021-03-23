@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700;800&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
@@ -39,15 +39,15 @@ header > .logo > a > i {
     font-size: 2em;
 }
 header > button, button:active, button:focus {
-    background-color: crimson;
+    background-color: olive;
     border-color: #51bb7b;
     color: blue;
     padding: 6px 25px;
     border-radius: 25px;
     border-style: none;
 }
-header > button:focus{
-    background-color: rgb(161. 242, 126);
+header > button:focus {
+    background-color: rgba(39, 129, 74, 0.9);
     }
 
 .hero{
@@ -60,21 +60,77 @@ header > button:focus{
 .sitebar {
     grid-column: 1/2;
     grid-row: 3/5;
+    border-top: 3px solid #693f7e;
+    background-color: #f9f9f6;
+    padding: 2em;
+}
+.sidebar h3 {
+    margin: 1em auto;
+}
+.sitebar ul {
+    list-style-type: none; 
+}
+.sitebar li {
+    margin: .2em 0;
+}
+.sitebar a {
+    font-size: .75em;
 }
 main {
     grid-column: 2/4;
     grid-row: 2/4;
 }
+main h1 {
+   color:#50c6db; 
+    font-weight: 700;
+    margin: .5em;
+    
+}
+main p {
+   margin: 0.7em 0;
+    font-weight: 500;
+    color: #453f3f; 
+}
 .help {
+    display: flex;
+    justify-content: space-around;
     grid-column: 2/4;
     grid-row: 4/5;
+    border: 1.5px solid #d9d9d9;
+    padding: 1em;
+}
+.help-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+}
+.help-item h3{
+    font-weight: 500;
+}
+.help-item p{
+    margin: 0.75em 0;
+    font-size: .75;
+}
+.help-item button {
+    border: 2px solid #50c6db;
+    padding: 0.5em;
+    color: #50c6db;
+    font-weight: 500;
+    background-color: #fff;
+    cursor: pointer;
 }
 .gallery {
+    display: grid;
     grid-column: 1/3;
     grid-row: 5/6;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-gap: 0.8em;
+    
 }
 .gallery img {
-    width: 30%;
+    width: 100%;
 }
 
 nav ul {
@@ -87,9 +143,111 @@ nav ul li {
 .sitebar-related {
     grid-column: 3/4;
     grid-row: 5/6;
+    padding: 2em;
+}
+.sitebar-related h3{
+    margin-bottom: .5em;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #d9d9d9;
+}
+.sitebar-related ul {
+    margin-left: 1.1em;
+}
+
+.sitebar-related a {
+    font-size: .75em;
+    font-weight: 500;
+    color: #838383;
+    margin-left: 0.2em;
 }
 footer {
+    background-color: #9f9c9c;
     grid-column: 1/4;
     grid-row: 6/7;
     text-align: center;
+    padding: 2em 0;
 }
+footer h3{
+    color: #fff;
+    margin-bottom: .7em;
+}
+footer p {
+    margin-bottom: 0.8em;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-rows: repeat (6, auto); 
+    }
+    .hero {
+        display: none;
+    }
+    .sitebar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-column: 1/4;
+        grid-row: 2/4;
+        justify-content: flex-start; 
+        border-top: none;
+        
+    }
+    .sitebar ul{
+        display: flex;
+        margin-top: 1em;
+        
+        
+    }
+    .sitebar li{
+        margin-left: 20px;
+        
+    }
+    main{
+        grid-column: 1/4;
+        grid-row: 4/5;
+    }
+    main h1 {
+        text-align: center;
+    }
+    .help {
+        grid-column: 1/4;
+        grid-row: 5/6;
+    }
+    .help p {
+        padding: .2em;
+    }
+    .gallery{
+       grid-column: 1/4;
+        grid-row: 6/7;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .gallery img {
+    width: 100%;
+   
+    }
+    .sitebar-related {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-column: 1/4;
+        grid-row: 7/8;
+    }
+    .sitebar-related ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    .sitebar-related li{
+        margin-left: 2em;
+    }
+    .sitebar-related li::before{
+        margin: -10px;
+    }
+    footer{
+        grid-column: 1/4;
+        grid-row: 8/9;
+    }
+    footer p{
+        font-size: 12px;
+    }
+   /* grid-template-areas: 
+    "header header header"*/
+}*/
